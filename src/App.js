@@ -20,8 +20,8 @@ function App() {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={user ? <HomeScreen /> : <Login />} />
-                <Route path='/home' element={user ? <HomeScreen newUser={user} /> : <Navigate to="/" />} />
-                <Route path='/tasks' element={user ? <ListaDeTarefas />  : <Navigate to="/" />} />
+                <Route path='/home' element={user ? <HomeScreen /> : <Navigate to="/" />} />
+                <Route path='/tasks' element={user ? <ListaDeTarefas newUser={user} />  : <Navigate to="/" />} />
                 
                 <Route path='*' element={
                     <div>

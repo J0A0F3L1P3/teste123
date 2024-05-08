@@ -1,6 +1,7 @@
 import React from "react";
 import { auth } from './auth';
 import './Home.css'
+import { Link } from "react-router-dom";
 
 function HomeScreen(newUser) {
 
@@ -30,6 +31,7 @@ function HomeScreen(newUser) {
                     <p>Nome: {user.displayName || 'Não fornecido'}</p>
                     <p>Email: {user.email}</p>
                     <p>ID do Usuário: {user.uid}</p>
+                    <Link to={"/tasks"}></Link>
                     <button className="button" onClick={handleLogout}>Sair</button>
                 </header>
             )}
