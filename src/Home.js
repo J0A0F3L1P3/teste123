@@ -26,12 +26,12 @@ function HomeScreen(newUser) {
     return (
         <div>
             {user && (
-                <header>
+                <header className="header">
                     <h2>Dados do Usuário:</h2>
                     <p>Nome: {user.displayName || 'Não fornecido'}</p>
                     <p>Email: {user.email}</p>
                     <p>ID do Usuário: {user.uid}</p>
-                    <Link to={"/tasks"}></Link>
+                    <Link to={"/tasks"}><button className="button">Tarefas</button></Link>
                     <button className="button" onClick={handleLogout}>Sair</button>
                 </header>
             )}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './ListaDeTarefas.css';
+import { Link } from "react-router-dom";
 
 function ListaDeTarefas() {
   const [tarefas, setTarefas] = useState([]);
@@ -33,7 +34,8 @@ function ListaDeTarefas() {
 
   return (
     <div className="lista-de-tarefas">
-      <h1>Tarefas Etec</h1>  
+    <Link to={"/home"}><button className="button">Home</button></Link>
+      <h1>Tarefas Etec</h1>
       {mostrarFormulario && (
         <div className="adicionar-tarefa">
           <input
