@@ -3,89 +3,120 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+
+.home {
     height: 100vh;
-    background-image: url('./backgorundPage.webp');
+    width: 100vw;
+    background-color: #F2E3D5;
     background-size: cover;
     background-position: center;
-  }
-  
-  .container {
-    /* display: none; */
-    max-width: 400px;
-    border: none;
-    border-radius: 25px;
-    text-align: center;
-    overflow: hidden;
+}
+
+header {
+    background-color: #012E40;
+    height: 7.5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .button {
+    width: 10vw;
+    min-width: 40px;
+    background-color: #026773;
+    height: 80%;
+    border-radius: 10px;
+}
+
+.backUserInfo {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.userInfo {
     background-color: #fff;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  }
-  
-  .title-login,
-  .title-cads {
-    height: 30vh;
-    background-image: url('./backgorundLogin.webp');
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 30px;
+}
+
+.mainFrame {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url('./backHome.jpg');
     background-size: cover;
-    background-position: center bottom;
-    padding: 15px;
-  }
-  
-  h1 {
-    color: aqua;
-  }
-  
-  .form {
+    background-position: center;
+    height: 70vh;
+    width: 80vw;
+    padding-top: 80px;
+    overflow: visible;
+    border-radius: 30px;
+}
+
+.welcome {
+    font-size: 50px;
+    color: #024959;
+}
+
+.divMainFrame {
+    margin-top: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.pages-musicas,
+.pages-tarefas {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 45%;
+    height: 40vh;
+    border-radius: 30px;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.pages-musicas {
+    background-image: url('./backMusicas.jpg');
+}
+
+.pages-tarefas {
+    background-image: url('./backTarefas.jpeg');
+}
+
+.form {
     margin: 20px;
-  }
-  
-  h2 {
+}
+
+h2 {
     text-align: start;
     margin-bottom: 20px;
-  }
-  
-  .input {
+}
+
+.input {
     width: 100%;
     margin-bottom: 10px;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-  }
-  
-  .link-button {
-    background-color: transparent;
-    border: none;
-    color: #007bff;
-    cursor: pointer;
-    text-decoration: underline;
-    margin-bottom: 10px;
-  }
-  
-  .btnGroup {
-    display: flex;
-    border-radius: 5px;
-    overflow: hidden;
-  }
-  
-  .button,
-  .google-button  {
+}
+
+.button {
+    height: 50px;
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #026773;
     color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .google-button {
-    background-color: #db4437;
-  }
-  
-  .error {
-    color: red;
-    /* margin-top: 10px; */
-  }
+}
