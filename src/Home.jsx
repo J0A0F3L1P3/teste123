@@ -2,6 +2,7 @@ import React from "react";
 import { auth } from './auth';
 import './Home.css'
 import { Link } from "react-router-dom";
+import { RiUserLine } from 'react-icons/ri';
 
 function HomeScreen(newUser) {
 
@@ -28,22 +29,25 @@ function HomeScreen(newUser) {
         <div className="home">
             {user && (
                 <div>
-                    <header className="header">
-                        <button className="button" onClick={() => setShowUserInfo(!showUserInfo)}>
-                            Nome: {user.displayName || 'Não fornecido'}
-                        </button>
-                        {showUserInfo && (
-                            <div className="backUserInfo">
-                                <div className="userInfo">
-                                    <p>Email: {user.displayName}</p>
-                                    <p>Email: {user.email}</p>
-                                    <p>ID: {user.uid}</p>
+                    {showUserInfo && (
+                        <div className="backUserInfo">
+                            <div className="userInfo">
+                                <div className="header">
                                     <button className="button Xbut" onClick={() => setShowUserInfo(!showUserInfo)}>
-                                        X
+                                        <h1>X</h1>
                                     </button>
                                 </div>
+                                <p>Email: {user.displayName}</p>
+                                <p>Email: {user.email}</p>
+                                <p>ID: {user.uid}</p>
                             </div>
-                        )}
+                        </div>
+                    )}
+
+                    <header className="header">
+                        <button className="button profile-icon" onClick={() => setShowUserInfo(!showUserInfo)}>
+                            <RiUserLine />
+                        </button>
                         <button className="button" onClick={handleLogout}>Sair</button>
                     </header>
 

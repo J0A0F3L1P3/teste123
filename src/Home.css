@@ -13,6 +13,16 @@
     background-position: center;
 }
 
+.Xbut {
+    background-color: white;
+}
+
+.Xbut h1 {
+    color: #fff;
+    background-color: #026773;
+    width: 15%;
+}
+
 header {
     background-color: #012E40;
     height: 7.5vh;
@@ -115,8 +125,15 @@ h2 {
 
 .button {
     height: 50px;
-    width: 100%;
+    /* width: 100%; */
     padding: 10px;
     background-color: #026773;
     color: #fff;
+}
+
+.profile-icon {
+    padding: 0px;
+    font-size: 25px;
+    display: grid;
+    place-items: center;
 }
