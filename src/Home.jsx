@@ -32,14 +32,17 @@ function HomeScreen(newUser) {
                     {showUserInfo && (
                         <div className="backUserInfo">
                             <div className="userInfo">
-                                <div className="header">
+                                <div className="headerPerfil">
+                                    <h3>Perfil</h3>
                                     <button className="button Xbut" onClick={() => setShowUserInfo(!showUserInfo)}>
-                                        <h1>X</h1>
+                                        <p>X</p>
                                     </button>
                                 </div>
-                                <p>Email: {user.displayName}</p>
-                                <p>Email: {user.email}</p>
-                                <p>ID: {user.uid}</p>
+                                <div className="perfilInfo">
+                                    <p>Email: {user.displayName}</p>
+                                    <p>Email: {user.email}</p>
+                                    <p>ID: {user.uid}</p>
+                                </div>
                             </div>
                         </div>
                     )}
