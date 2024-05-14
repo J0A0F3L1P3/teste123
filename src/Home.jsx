@@ -25,6 +25,8 @@ function HomeScreen(newUser) {
         }
     };
 
+    const fotoPerfil = user.photoURL ? user.photoURL : 'https://via.placeholder.com/120x120';
+
     return (
         <div className="home">
             {user && (
@@ -39,6 +41,7 @@ function HomeScreen(newUser) {
                                     </button>
                                 </div>
                                 <div className="perfilInfo">
+                                    <img src={fotoPerfil} alt="Foto de perfil" />
                                     <p>Email: {user.displayName}</p>
                                     <p>Email: {user.email}</p>
                                     <p>ID: {user.uid}</p>
