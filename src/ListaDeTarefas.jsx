@@ -1,26 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import './ListaDeTarefas.css';
-import { Link } from "react-router-dom";
+import NavBar from "./components/navBar";
+import { auth } from './auth.js';
 
 function ListaDeTarefas() {
     const [tarefas, setTarefas] = useState([]);
     const [novaTarefa, setNovaTarefa] = useState('');
     const [mostrarFormulario, setMostrarFormulario] = useState(false);
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
-        const tarefasArmazenadas = JSON.parse(localStorage.getItem('tarefas'));
-        if (tarefasArmazenadas) {
-            setTarefas(tarefasArmazenadas);
-        }
+        const unsubscribe = auth.onAuthStateChanged(localUser => {
+            setUser(localUser);
+        });
+
+        return () => unsubscribe();
     }, []);
-
-    useEffect(() => {
-        localStorage.setItem('tarefas', JSON.stringify(tarefas));
-    }, [tarefas]);
 
     const adicionarTarefa = () => {
         if (novaTarefa.trim() !== '') {
-            setTarefas([...tarefas, novaTarefa]);
+            setTarefas([...tarefas, { text: novaTarefa, userId: user.uid }]);
             setNovaTarefa('');
             setMostrarFormulario(false);
         }
@@ -34,30 +32,32 @@ function ListaDeTarefas() {
 
     return (
         <div className="lista-de-tarefas">
-            <Link to={"/home"}><button className="button">Home</button></Link>
-            <h1>Tarefas Etec</h1>
-            {mostrarFormulario && (
-                <div className="adicionar-tarefa">
-                    <input
-                        type="text"
-                        value={novaTarefa}
-                        onChange={(e) => setNovaTarefa(e.target.value)}
-                        placeholder="Digite uma nova tarefa"
-                    />
-                    <button onClick={adicionarTarefa}>Adicionar</button>
-                </div>
-            )}
-            {!mostrarFormulario && (
-                <button className="botao-flutuante" onClick={() => setMostrarFormulario(true)}>+</button>
-            )}
-            <ul>
-                {tarefas.map((tarefa, index) => (
-                    <li key={index} className="tarefa">
-                        <div>{tarefa}</div>
-                        <div className="remover-tarefa" onClick={() => removerTarefa(index)}>Deslize para excluir</div>
-                    </li>
-                ))}
-            </ul>
+            <NavBar />
+            <main>
+                <h2>Suas atividades</h2>
+                <ul>
+                    {tarefas.filter(tarefa => tarefa.userId === user.uid).map((tarefa, index) => (
+                        <li key={index} className="tarefa">
+                            <p>{tarefa.text}</p>
+                            <button className="remover-tarefa" onClick={() => removerTarefa(index)}>Clique para excluir?</button>
+                        </li>
+                    ))}
+                </ul>
+                {mostrarFormulario && (
+                    <div className="adicionar-tarefa">
+                        <input
+                            type="text"
+                            value={novaTarefa}
+                            onChange={(e) => setNovaTarefa(e.target.value)}
+                            placeholder="Digite uma nova tarefa"
+                        />
+                        <button onClick={adicionarTarefa}>Adicionar</button>
+                    </div>
+                )}
+                {!mostrarFormulario && (
+                    <button className="botao-flutuante" onClick={() => setMostrarFormulario(true)}>+</button>
+                )}
+            </main>
         </div>
     );
 }

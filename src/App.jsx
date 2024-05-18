@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Login from './Login.jsx';
 import HomeScreen from './Home.jsx';
-import { auth } from './auth.js';
 import ListaDeTarefas from './ListaDeTarefas.jsx';
+import { auth } from './auth.js';
+import './App.scss'
 
 function App() {
     const [user, setUser] = useState(null);

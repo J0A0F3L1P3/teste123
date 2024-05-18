@@ -1,13 +1,11 @@
 import React from "react";
 import { auth } from './auth';
-import './Home.css'
 import { Link } from "react-router-dom";
-import { RiUserLine } from 'react-icons/ri';
+import NavBar from "./components/navBar";
 
 function HomeScreen(newUser) {
 
     const [user, setUser] = React.useState(newUser);
-    const [showUserInfo, setShowUserInfo] = React.useState(false);
 
     React.useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
@@ -17,61 +15,26 @@ function HomeScreen(newUser) {
         return () => unsubscribe();
     }, []);
 
-    const handleLogout = async () => {
-        try {
-            await auth.signOut();
-        } catch (err) {
-            console.error("Erro ao fazer logout:", err);
-        }
-    };
-
-    const fotoPerfil = user.photoURL ? user.photoURL : 'https://via.placeholder.com/120x120';
-
     return (
         <div className="home">
             {user && (
                 <div>
-                    {showUserInfo && (
-                        <div className="backUserInfo">
-                            <div className="userInfo">
-                                <div className="headerPerfil">
-                                    <h3>Perfil</h3>
-                                    <button className="button Xbut" onClick={() => setShowUserInfo(!showUserInfo)}>
-                                        <p>X</p>
-                                    </button>
-                                </div>
-                                <div className="perfilInfo">
-                                    <img src={fotoPerfil} alt="Foto de perfil" />
-                                    <p>Email: {user.displayName}</p>
-                                    <p>Email: {user.email}</p>
-                                    <p>ID: {user.uid}</p>
-                                </div>
-                            </div>
-                        </div>
-                    )}
-
-                    <header className="header">
-                        <button className="button profile-icon" onClick={() => setShowUserInfo(!showUserInfo)}>
-                            <RiUserLine />
-                        </button>
-                        <button className="button" onClick={handleLogout}>Sair</button>
-                    </header>
-
+                    <NavBar />
                     <main>
-                        <div className="mainFrame">
+                        <section>
                             <h2 className="welcome">Bem vindo,</h2>
                             <h2 className="welcome">{user.displayName}</h2>
-                            <div className="divMainFrame">
-                                <div className="pages-musicas">
+                            <div className="Frames">
+                                <div className="page-musicas">
                                     <h2>Música</h2>
                                     <Link to={"/music"}><button className="button">Ir para a página de música</button></Link>
                                 </div>
-                                <div className="pages-tarefas">
+                                <div className="page-tarefas">
                                     <h2>Tarefas</h2>
                                     <Link to={"/tasks"}><button className="button">Ir para a página de tarefas</button></Link>
                                 </div>
                             </div>
-                        </div>
+                        </section>
                     </main>
                 </div>
             )}

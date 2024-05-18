@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { auth } from './auth';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
-import './Login.css';
 
 function LoginScreen() {
     const [email, setEmail] = useState('');
@@ -42,79 +41,81 @@ function LoginScreen() {
     };
 
     return (
-        <div className="container">
-            {mode === 'login' ? (
-                <div>
-                    <div className='title-login'>
-                        <h1>Firebase Authentication</h1>
-                    </div>
-                    <div className='form'>
-                        <h2>Login</h2>
-                        <input
-                            className="input"
-                            type="email"
-                            placeholder="Email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <input
-                            className="input"
-                            type="password"
-                            placeholder="Password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                        <button className="link-button" onClick={() => setMode('signup')}>Não tem conta? Cadastrar</button>
-                        <div className='btnGroup'>
-                            <button className="button" onClick={handleAuth}>Login</button>
-                            <button className="google-button" onClick={handleGoogleLogin}>Google</button>
+        <div className='login'>
+            <div className="container">
+                {mode === 'login' ? (
+                    <div>
+                        <div className='title-login'>
+                            <h1>Firebase Authentication</h1>
+                        </div>
+                        <div className='form'>
+                            <h2>Login</h2>
+                            <input
+                                className="input"
+                                type="email"
+                                placeholder="Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <input
+                                className="input"
+                                type="password"
+                                placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                            <button className="link-button" onClick={() => setMode('signup')}>Não tem conta? Cadastrar</button>
+                            <div className='btnGroup'>
+                                <button className="button" onClick={handleAuth}>Login</button>
+                                <button className="google-button" onClick={handleGoogleLogin}>Google</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            ) : (
-                <div>
-                    <div className='title-cads'>
-                        <h1>Firebase Authentication</h1>
-                    </div>
-                    <div className='form'>
-                        <h2>Cadastro</h2>
-                        <input
-                            className="input"
-                            type="email"
-                            placeholder="Email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <input
-                            className="input"
-                            type="text"
-                            placeholder="Nome de Usuário"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                        />
-                        <input
-                            className="input"
-                            type="password"
-                            placeholder="Password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                        <input
-                            className="input"
-                            type="password"
-                            placeholder="Confirmar Password"
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                        />
-                        <button className="link-button" onClick={() => setMode('login')}>Já tem conta? Faça login</button>
-                        <div className='btnGroup'>
-                            <button className="button" onClick={handleAuth}>Cadastrar</button>
-                            <button className="google-button" onClick={handleGoogleLogin}>Google</button>
+                ) : (
+                    <div>
+                        <div className='title-cads'>
+                            <h1>Firebase Authentication</h1>
+                        </div>
+                        <div className='form'>
+                            <h2>Cadastro</h2>
+                            <input
+                                className="input"
+                                type="email"
+                                placeholder="Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                            <input
+                                className="input"
+                                type="text"
+                                placeholder="Nome de Usuário"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                            <input
+                                className="input"
+                                type="password"
+                                placeholder="Password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                            <input
+                                className="input"
+                                type="password"
+                                placeholder="Confirmar Password"
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                            />
+                            <button className="link-button" onClick={() => setMode('login')}>Já tem conta? Faça login</button>
+                            <div className='btnGroup'>
+                                <button className="button" onClick={handleAuth}>Cadastrar</button>
+                                <button className="google-button" onClick={handleGoogleLogin}>Google</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            )}
-            {error && <p className="error">{error}</p>}
+                )}
+                {error && <p className="error">{error}</p>}
+            </div>
         </div>
     );
 }

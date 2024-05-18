@@ -1,0 +1,451 @@
+$primary-color: #007bff;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background: url('./assets/backStart.jpg') center / cover;
+
+    .container {
+        max-width: 400px;
+        margin: 15px;
+        border: none;
+        border-radius: 25px;
+        text-align: center;
+        overflow: hidden;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+            rgba(0, 0, 0, 0.12) 0px -12px 30px,
+            rgba(0, 0, 0, 0.12) 0px 4px 6px,
+            rgba(0, 0, 0, 0.17) 0px 12px 13px,
+            rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    .title-login,
+    .title-cads {
+        height: 30vh;
+        background: url('./assets/backLogin.jpg') center bottom / cover;
+        padding: 15px;
+    }
+
+    h1 {
+        color: aqua;
+    }
+
+    .form {
+        margin: 20px;
+    }
+
+    h2 {
+        text-align: start;
+        margin-bottom: 20px;
+    }
+
+    .input {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .link-button {
+        background-color: transparent;
+        border: none;
+        color: $primary-color;
+        cursor: pointer;
+        text-decoration: underline;
+        margin-bottom: 10px;
+    }
+
+    .btnGroup {
+        display: flex;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+
+    .button,
+    .google-button {
+        width: 100%;
+        padding: 10px;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    .button {
+        background-color: $primary-color;
+    }
+
+    .google-button {
+        background-color: #db4437;
+    }
+
+    .error {
+        color: red;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.lista-de-tarefas {
+    header {
+        display: flex;
+        // .button {}
+
+        // h1 {}
+    }
+
+    main {
+        padding: 0px 5vw;
+        // ul {
+        //     li {
+        //         p {}
+
+        //         button {}
+        //     }
+        // }
+
+        // .adicionar-tarefa {
+        //     input {}
+        //     button {}
+        // }
+        // .botao-flutuante {}
+        // .botao-flutuante:hover {}
+    }
+
+
+
+    .input {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .lista-de-tarefas {
+        max-width: 400px;
+        margin: 0 auto;
+        font-family: Arial, sans-serif;
+        position: relative;
+    }
+
+    .botao-flutuante {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #007bff;
+        color: #fff;
+        font-size: 24px;
+        border: none;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        z-index: 1;
+        transition: bottom 0.3s ease;
+    }
+
+    .botao-flutuante:hover {
+        background-color: #0056b3;
+    }
+
+    .adicionar-tarefa {
+        margin-bottom: 20px;
+    }
+
+    .adicionar-tarefa input {
+        padding: 8px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .adicionar-tarefa button {
+        padding: 8px 16px;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .tarefa {
+        position: relative;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 5px;
+        transition: transform 0.3s ease;
+    }
+
+    .tarefa:hover {
+        transform: translateX(-20px);
+    }
+
+    .tarefa:hover .remover-tarefa {
+        display: block;
+    }
+
+    .remover-tarefa {
+        display: none;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        color: #fff;
+        background-color: #dc3545;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+}
+
+$primary-color: #026773;
+$secondary-color: #012E40;
+
+.navBar {
+    .backPerfil {
+        display: grid;
+        place-items: center;
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        .Perfil {
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #F2E3D5;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+                rgba(0, 0, 0, 0.12) 0px -12px 30px,
+                rgba(0, 0, 0, 0.12) 0px 4px 6px,
+                rgba(0, 0, 0, 0.17) 0px 12px 13px,
+                rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+            header {
+                background-color: #F2E3D5;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                h3 {
+                    font-size: 30px;
+                    margin-left: 10px;
+                }
+
+                button {
+                    width: 10%;
+                    height: 100%;
+                    min-width: 40px;
+                    background-color: $primary-color;
+                    border: none;
+
+                    p {
+                        color: #fff;
+                        font-size: 1.5em;
+                    }
+                }
+            }
+
+            main {
+                display: grid;
+                place-items: center;
+                padding: 10px;
+                padding-bottom: 0px;
+
+                div {
+                    display: grid;
+                    place-items: center;
+                    height: 150px;
+                }
+
+                img {
+                    width: 100%;
+                    border-radius: 100%;
+                }
+
+                button {
+                    width: 100%;
+                    min-width: 40px;
+                    background-color: $primary-color;
+                    border: none;
+                    padding: 10px;
+
+                    p {
+                        color: #fff;
+                        font-size: 1.5em;
+                    }
+                }
+            }
+        }
+    }
+
+    header {
+        background-color: $secondary-color;
+        height: 7.5vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 5vw;
+
+        .navTitle {
+            display: grid;
+            align-items: center;
+            color: $primary-color;
+            background: transparent;
+            height: 100%;
+            border-radius: 15%;
+            border: none;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .button {
+            background-color: $primary-color;
+            height: 80%;
+            border-radius: 15%;
+            border: none;
+            overflow: hidden;
+        }
+
+        img {
+            height: 100%;
+        }
+    }
+}
+
+.home {
+    min-height: 100vh;
+    width: 100vw;
+    background-color: #F2E3D5;
+
+    main {
+        display: grid;
+        padding-top: 30px;
+        place-items: center;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        background-image: url('./assets/backHome.jpg');
+        background-size: cover;
+        background-position: bottom;
+        height: 70vh;
+        width: 90vw;
+        padding-top: 80px;
+        overflow: visible;
+        border-radius: 15px;
+
+        .welcome {
+            font-size: 50px;
+            color: #024959;
+        }
+
+        .Frames {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 230px;
+        }
+
+        .page-musicas,
+        .page-tarefas {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 45%;
+            height: 30vh;
+            border-radius: 15px;
+            overflow: hidden;
+            background-size: cover;
+            background-position: bottom;
+
+            h2 {
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+        }
+
+        .page-musicas {
+            background-image: url('./assets/backMusicas.jpg');
+        }
+
+        .page-tarefas {
+            background-image: url('./assets/backTarefas.jpeg');
+        }
+
+        .button {
+            width: 100%;
+            background-color: $primary-color;
+            height: 50px;
+            border: none;
+        }
+    }
+
+    @media (max-width: 520px) {
+        section {
+            display: grid;
+            place-items: center;
+            padding-top: 50px;
+
+            .welcome {
+                font-size: 2rem;
+                color: #024959;
+            }
+
+            .Frames {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 50px;
+            }
+
+            .page-musicas,
+            .page-tarefas {
+                width: 100%;
+            }
+
+            .page-musicas {
+                margin-bottom: 15px;
+                background-image: url('./assets/backMusicas.jpg');
+            }
+
+            .page-tarefas {
+                background-image: url('./assets/backTarefas.jpeg');
+            }
+
+            .button {
+                width: 100%;
+                background-color: $primary-color;
+                height: 50px;
+                border: none;
+            }
+        }
+    }
+}
