@@ -56,7 +56,7 @@ function ListaDeTarefas() {
                 )}
                 {!mostrarFormulario && (
                     <button className="botao-flutuante" onClick={() => setMostrarFormulario(true)}>+</button>
-                )}
+                )}a
             </main>
         </div>
     );
