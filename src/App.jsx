@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import Login from './Login.jsx';
-import HomeScreen from './Home.jsx';
-import ListaDeTarefas from './ListaDeTarefas.jsx';
+import Login from './pages/Login.jsx';
+import HomeScreen from './pages/Home.jsx';
+import ListaDeTarefas from './pages/ListaDeTarefas.jsx';
 import { auth } from './auth.js';
 import './App.scss'
 
